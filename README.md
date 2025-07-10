@@ -46,15 +46,6 @@ npm run build         # Compila el sitio para producción
 
 ---
 
-## Contacto
-
-📧 [robertocastillocontact@gmail.com](mailto:robertocastillocontact@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/roberto-castillo-riquelme/)
-
----
-
-© 2025 Roberto Castillo
-
 ## Cómo ejecutar localmente
 
 1. **Clona el repositorio:**
@@ -79,3 +70,12 @@ npm run dev
 Esto iniciará el servidor en `http://localhost:4200`.
 
 > Asegúrate de que el backend esté disponible en la URL especificada en tu `environment.ts` o `environment.prod.ts`.
+
+## Contacto
+
+📧 [robertocastillocontact@gmail.com](mailto:robertocastillocontact@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/roberto-castillo-riquelme/)
+
+---
+
+© 2025 Roberto Castillo
