@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Repository } from '../../../core/models/repository.model';
 import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
 
+
 @Component({
   selector: 'app-portfolio-card',
   standalone: true,
@@ -18,15 +19,11 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
               <i class="fab fa-github"></i>
               View Code
             </a>
-            <a *ngIf="repository.demoUrl" [href]="repository.demoUrl" target="_blank" class="btn-demo">
-              <i class="fas fa-external-link-alt"></i>
-              View Demo
-            </a>
           </div>
         </div>
       </div>
       <div class="card-content">
-        <h3 class="card-title">{{ repository.name | titlecase }}</h3>
+        <h3 class="card-title">{{ repository.name }}</h3>
         <p class="card-description">{{ repository.description || 'No description available' }}</p>
         <div class="card-meta">
           <div class="card-tech">
@@ -56,24 +53,21 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid #333;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
     }
+
 
     .portfolio-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
-      border-color: #4f46e5;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
     }
+
 
     .card-image {
       position: relative;
       height: 200px;
       overflow: hidden;
-      flex-shrink: 0;
     }
+
 
     .card-image img {
       width: 100%;
@@ -82,9 +76,11 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       transition: transform 0.3s ease;
     }
 
+
     .portfolio-card:hover .card-image img {
       transform: scale(1.05);
     }
+
 
     .card-overlay {
       position: absolute;
@@ -100,83 +96,70 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       transition: opacity 0.3s ease;
     }
 
+
     .portfolio-card:hover .card-overlay {
       opacity: 1;
     }
 
-    .card-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
 
-    .btn-view, .btn-demo {
+    .btn-view {
       background: #4f46e5;
       color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.9rem;
     }
 
-    .btn-view:hover, .btn-demo:hover {
+
+    .btn-view:hover {
       background: #3730a3;
-      transform: translateY(-2px);
     }
 
-    .btn-demo {
-      background: #059669;
-    }
-
-    .btn-demo:hover {
-      background: #047857;
-    }
 
     .card-content {
       padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
     }
+
 
     .card-title {
       color: #fff;
       font-size: 1.25rem;
       font-weight: bold;
       margin-bottom: 0.75rem;
-      line-height: 1.2;
+      text-transform: capitalize;
     }
+
 
     .card-description {
       color: #ccc;
-      line-height: 1.6;
+      line-height: 1.5;
       margin-bottom: 1rem;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      flex: 1;
     }
+
 
     .card-meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 1rem;
       flex-wrap: wrap;
       gap: 1rem;
     }
 
+
     .card-tech {
       flex: 1;
-      min-width: 0;
     }
+
 
     .tech-label {
       color: #4f46e5;
@@ -184,17 +167,18 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       margin-right: 0.5rem;
     }
 
+
     .tech-list {
       color: #ccc;
       font-size: 0.9rem;
-      word-wrap: break-word;
     }
+
 
     .card-stats {
       display: flex;
       gap: 1rem;
-      flex-shrink: 0;
     }
+
 
     .stat {
       color: #ccc;
@@ -204,33 +188,24 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       gap: 0.25rem;
     }
 
+
     .stat i {
       color: #4f46e5;
     }
+
 
     .card-date {
       color: #888;
       font-size: 0.8rem;
       border-top: 1px solid #333;
       padding-top: 1rem;
-      margin-top: auto;
     }
+
 
     @media (max-width: 768px) {
       .card-meta {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .card-actions {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .btn-view, .btn-demo {
-        width: 100%;
-        justify-content: center;
       }
     }
   `]
