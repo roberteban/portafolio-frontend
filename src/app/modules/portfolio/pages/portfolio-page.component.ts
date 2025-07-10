@@ -6,16 +6,9 @@ import { PortfolioListComponent } from '../components/portfolio-list.component';
   selector: 'app-portfolio-page',
   standalone: true,
   imports: [CommonModule, PortfolioListComponent],
-  template: `
-    <main class="portfolio-page">
-      <app-portfolio-list></app-portfolio-list>
-    </main>
-  `,
-  styles: [`
-    .portfolio-page {
-      min-height: 100vh;
-      background: #0a0a0a;
-    }
-  `]
+  template: 
+    <app-portfolio-list></app-portfolio-list>
+  ,
+  styles: []
 })
 export class PortfolioPageComponent {}
