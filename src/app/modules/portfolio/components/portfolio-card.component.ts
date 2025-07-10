@@ -10,7 +10,7 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
   template: `
     <div class="portfolio-card">
       <div class="card-image">
-        <img [src]="repository.image || 'assets/images/project-placeholder.jpg'" 
+        <img [src]="repository.image || 'assets/images/project-placeholder.jpg'"
              [alt]="repository.name" />
         <div class="card-overlay">
           <div class="card-actions">
@@ -18,11 +18,15 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
               <i class="fab fa-github"></i>
               View Code
             </a>
+            <a *ngIf="repository.demoUrl" [href]="repository.demoUrl" target="_blank" class="btn-demo">
+              <i class="fas fa-external-link-alt"></i>
+              View Demo
+            </a>
           </div>
         </div>
       </div>
       <div class="card-content">
-        <h3 class="card-title">{{ repository.name }}</h3>
+        <h3 class="card-title">{{ repository.name | titlecase }}</h3>
         <p class="card-description">{{ repository.description || 'No description available' }}</p>
         <div class="card-meta">
           <div class="card-tech">
@@ -52,17 +56,23 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #333;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .portfolio-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+      box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+      border-color: #4f46e5;
     }
 
     .card-image {
       position: relative;
       height: 200px;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .card-image img {
@@ -94,25 +104,45 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       opacity: 1;
     }
 
-    .btn-view {
+    .card-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-view, .btn-demo {
       background: #4f46e5;
       color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
-    .btn-view:hover {
+    .btn-view:hover, .btn-demo:hover {
       background: #3730a3;
+      transform: translateY(-2px);
+    }
+
+    .btn-demo {
+      background: #059669;
+    }
+
+    .btn-demo:hover {
+      background: #047857;
     }
 
     .card-content {
       padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card-title {
@@ -120,23 +150,24 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       font-size: 1.25rem;
       font-weight: bold;
       margin-bottom: 0.75rem;
-      text-transform: capitalize;
+      line-height: 1.2;
     }
 
     .card-description {
       color: #ccc;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 1rem;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      flex: 1;
     }
 
     .card-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 1rem;
       flex-wrap: wrap;
       gap: 1rem;
@@ -144,6 +175,7 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
 
     .card-tech {
       flex: 1;
+      min-width: 0;
     }
 
     .tech-label {
@@ -155,11 +187,13 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
     .tech-list {
       color: #ccc;
       font-size: 0.9rem;
+      word-wrap: break-word;
     }
 
     .card-stats {
       display: flex;
       gap: 1rem;
+      flex-shrink: 0;
     }
 
     .stat {
@@ -179,12 +213,24 @@ import { TechFormatPipe } from '../../../shared/pipes/tech-format.pipe';
       font-size: 0.8rem;
       border-top: 1px solid #333;
       padding-top: 1rem;
+      margin-top: auto;
     }
 
     @media (max-width: 768px) {
       .card-meta {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .card-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .btn-view, .btn-demo {
+        width: 100%;
+        justify-content: center;
       }
     }
   `]

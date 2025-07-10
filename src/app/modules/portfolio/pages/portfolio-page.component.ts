@@ -7,8 +7,15 @@ import { PortfolioListComponent } from '../components/portfolio-list.component';
   standalone: true,
   imports: [CommonModule, PortfolioListComponent],
   template: `
-    <app-portfolio-list></app-portfolio-list>
+    <main class="portfolio-page">
+      <app-portfolio-list></app-portfolio-list>
+    </main>
   `,
-  styles: []
+  styles: [`
+    .portfolio-page {
+      min-height: 100vh;
+      background: #0a0a0a;
+    }
+  `]
 })
 export class PortfolioPageComponent {}
