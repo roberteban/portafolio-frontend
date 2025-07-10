@@ -15,7 +15,7 @@ Desarrollado con **Angular 18** y desplegado en **Vercel**, este portafolio pres
 
 ---
 
-## Estructura del proyecto
+## Estructura
 
 ```plaintext
 src/app/
@@ -75,7 +75,7 @@ Esto iniciará el servidor en `http://localhost:4200`.
 
 ## Contacto
 
-📧 [robertocastillocontact@gmail.com](mailto:robertocastillocontact@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/roberto-castillo-riquelme/)
+[robertocastillocontact@gmail.com](mailto:robertocastillocontact@gmail.com)  
+[LinkedIn](https://www.linkedin.com/in/roberto-castillo-riquelme/)
 
 © 2025 Roberto Castillo
