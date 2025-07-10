@@ -1,59 +1,56 @@
-# Portfolio
+# Portafolio Profesional – Roberto Castillo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Desarrollado con **Angular 18** y desplegado en **Vercel**, este portafolio presenta mis proyectos más recientes, mi perfil profesional y un formulario de contacto funcional conectado a un backend propio.
 
-## Development server
+📍 **Sitio en producción:** [https://portafolio-frontend-chi.vercel.app](https://portafolio-frontend-chi.vercel.app)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## Tecnologías principales
+
+- **Angular 18** – Standalone APIs, lazy loading
+- **CSS personalizado** – Diseño responsive adaptado desde Figma
+- **HTTPClient** – Consumo de API propia para proyectos y contacto
+- **Despliegue en Vercel** – Output: `dist/portfolio`
+
+---
+
+## Estructura del proyecto
+
+```plaintext
+src/app/
+├── core/         # Servicios, interceptores, modelos
+├── modules/      # Secciones del sitio (home, about, etc.)
+├── shared/       # Componentes reutilizables (header, footer, etc.)
+├── app.component.ts
+└── app.routes.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Scripts útiles
 
 ```bash
-ng generate component component-name
+npm run dev           # Servidor local (http://localhost:4200)
+npm run build         # Compila el sitio para producción
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Funcionalidades
 
-## Building
+- Hero inicial con imagen destacada y redes sociales
+- Secciones: About, Services, Portfolio y Contact
+- Carga dinámica de proyectos desde GitHub
+- Formulario funcional con validación y envío vía backend
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Contacto
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+📧 [robertocastillocontact@gmail.com](mailto:robertocastillocontact@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/roberto-castillo-riquelme/)
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 Roberto Castillo
