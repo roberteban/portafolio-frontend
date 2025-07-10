@@ -2,7 +2,7 @@
 
 Desarrollado con **Angular 18** y desplegado en **Vercel**, este portafolio presenta mis proyectos más recientes, mi perfil profesional y un formulario de contacto funcional conectado a un backend propio.
 
-📍 **Sitio en producción:** [https://portafolio-frontend-chi.vercel.app](https://portafolio-frontend-chi.vercel.app)
+**Sitio en producción:** [https://portafolio-frontend-chi.vercel.app](https://portafolio-frontend-chi.vercel.app)
 
 ---
 
@@ -55,7 +55,7 @@ npm run build         # Compila el sitio para producción
 
 © 2025 Roberto Castillo
 
-## 🧪 Cómo ejecutar localmente
+## Cómo ejecutar localmente
 
 1. **Clona el repositorio:**
 
