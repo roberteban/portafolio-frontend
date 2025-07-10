@@ -54,3 +54,28 @@ npm run build         # Compila el sitio para producción
 ---
 
 © 2025 Roberto Castillo
+
+## 🧪 Cómo ejecutar localmente
+
+1. **Clona el repositorio:**
+
+```bash
+git clone https://github.com/roberteban/portafolio-frontend.git
+cd portafolio-frontend
+```
+
+2. **Instala las dependencias:**
+
+```bash
+npm install
+```
+
+3. **Ejecuta en modo desarrollo:**
+
+```bash
+npm run dev
+```
+
+Esto iniciará el servidor en `http://localhost:4200`.
+
+> Asegúrate de que el backend esté disponible en la URL especificada en tu `environment.ts` o `environment.prod.ts`.
